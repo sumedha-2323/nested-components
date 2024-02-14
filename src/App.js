@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// function App() {
+//   return (
+//     <section>
+//       <h1>hello {new Date().toLocaleTimeString()}</h1>
+//     </section>
+//   )
+// }
+
+const InnerCompo = () =>{
+  return <h1>Inner Component</h1>
+}
+const PrintName = () =>{
+  // return <h1>Hello emma</h1>
+  return <InnerCompo/>;
 }
 
+const App = () =>{
+  const user = {
+    firstName:"emma",
+    lastName:"watson",
+  }
+
+  return (
+    <div>
+          <h1>Hello {user.firstName} {user.lastName}</h1>
+          <PrintName />
+          <PrintName />
+          <PrintName />
+
+    </div>
+    
+  );
+}
 export default App;
